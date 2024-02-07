@@ -26,7 +26,6 @@ while True:
                     try:
                         new_val = int(input("Новое значение: "))
                         sales[name][0] = new_val
-                        v = {'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]}
                         print({'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]})
                         done = True
                         break
@@ -38,7 +37,6 @@ while True:
                     try:
                         new_val = int(input("Новое значение: "))
                         sales[name][1] = new_val
-                        v = {'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]}
                         print({'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]})
                         done = True
                         break
@@ -50,7 +48,6 @@ while True:
                     try:
                         new_val = int(input("Новое значение: "))
                         sales[name][2] = new_val
-                        v = {'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]}
                         print({'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]})
                         done = True
                         break
@@ -62,7 +59,6 @@ while True:
                     try:
                         new_val = int(input("Новое значение: "))
                         sales[name][3] = new_val
-                        v = {'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]}
                         print({'N': sales[name][0], 'S': sales[name][1], 'E': sales[name][2], 'W': sales[name][3]})
                         done = True
                         break
