@@ -6,13 +6,23 @@
 #     5: {"name": "Дмитрий", "point": 6},
 # }
 # print(db)
-studies = int(input("Кол-во студентов: "))
-
+while True:
+    try:
+        studies = int(input("Кол-во студентов: "))
+        break
+    except ValueError:
+        print("Ошибка ввода. Введите число.")
 db = dict()
 for i in range(1, studies + 1):
     print(i, end="")
     name = input("-й студент: ")
-    point = int(input("Балл: "))
+    while True:
+        try:
+            point = int(input("Балл: "))
+            break
+        except ValueError:
+            print("Ошибка ввода. Введите балл для студента", name, end="")
+            print(".")
     db[i] = {"name": name, "point": point}
 
 # print(db)
