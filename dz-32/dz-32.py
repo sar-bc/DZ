@@ -3,7 +3,7 @@ def decor(fn):
         s = ""
         for i in range(len(args)):
             if i < len(args) - 1:
-                s = s + str(args[i]) + ","
+                s = s + str(args[i]) + ", "
             else:
                 s = s + str(args[i])
         res = fn(*args) / len(args)
