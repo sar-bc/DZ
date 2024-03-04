@@ -9,7 +9,7 @@ def func(lst):
     else:
         if lst[0] < 0:
             lst.pop(0)
-            count += func(lst) + 1
+            count = func(lst) + 1
         else:
             lst.pop(0)
             count = func(lst)
