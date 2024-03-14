@@ -41,7 +41,7 @@ p1.name = 67
 print(p1.name)
 print(p1.__dict__)
 print(p1.age)
-p1.age="asd"
+p1.age = "asd"
 print(p1.__dict__)
 del p1.name
 print(p1.__dict__)
