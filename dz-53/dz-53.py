@@ -20,11 +20,13 @@ class Clock:
     def get_form(x):
         return str(x) if x > 9 else "0" + str(x)
 
+    # +
     def __add__(self, other):
         if not isinstance(other, Clock):
             raise ArithmeticError("Правый операнд должен быть типом Clock")
         return Clock(self.sec + other.sec)
 
+    # ==
     def __eq__(self, other):
         if not isinstance(other, Clock):
             raise ArithmeticError("Правый операнд должен быть типом Clock")
@@ -32,25 +34,68 @@ class Clock:
             return True
         return False
 
+    # !=
     def __ne__(self, other):
         return not self.__eq__(other)
 
+    # -
+    def __sub__(self, other):
+        return Clock(self.sec - other.sec)
 
-c1 = Clock(100)
+    # *
+    def __mul__(self, other):
+        return Clock(self.sec * other.sec)
+
+    # //
+    def __floordiv__(self, other):
+        return Clock(self.sec // other.sec)
+
+    # %
+    def __mod__(self, other):
+        return Clock(self.sec % other.sec)
+
+    # >
+    def __gt__(self, other):
+        return Clock(self.sec > other.sec)
+
+    # <
+    def __lt__(self, other):
+        return not self.__gt__(other)
+
+    # >=
+    def __ge__(self, other):
+        return Clock(self.sec >= other.sec)
+
+    # <=
+    def __le__(self, other):
+        return not self.__ge__(other)
+
+
+c1 = Clock(600)
 c2 = Clock(200)
-# c4 = Clock(300)
-print(c1.get_format_time())
-print(c2.get_format_time())
-# print(c4.get_format_time())
-# c3 = c1 + c2 + c4
-# print(c3.get_format_time())
-# c1 += c2
-# print(c1.get_format_time())
-# if c1 == c2:
-#     print("Время равно")
-# else:
-#     print("Время разное")
-if c1 != c2:
-    print("Время разное")
-else:
-    print("Время равно")
+# ======================
+print(f"C1: {c1.get_format_time()}")
+c3 = c1 - c2
+print(f"C1 - C2: {c3.get_format_time()}")
+c3 = c1 * c2
+print(f"C1 * C2: {c3.get_format_time()}")
+c3 = c1 // c2
+print(f"C1 // C2: {c3.get_format_time()}")
+c3 = c1 % c2
+print(f"C1 % C2: {c3.get_format_time()}")
+c1 -= c2
+print(f"C1 -= C2: {c1.get_format_time()}")
+c1 *= c2
+print(f"C1 *= C2: {c1.get_format_time()}")
+c1 //= c2
+print(f"C1 //= C2: {c1.get_format_time()}")
+c3 = c1 % c2
+print(f"C1 % C2: {c3.get_format_time()}")
+
+print("*" * 50)
+c3 = Clock(800)
+
+print("C3 > C1 ", c3.get_format_time() > c1.get_format_time())
+print("C3 >= C1 ", c3.get_format_time() >= c1.get_format_time())
+print("C3 < C1 ", c3.get_format_time() < c1.get_format_time())
+print("C3 <= C1 ", c3.get_format_time() <= c1.get_format_time())
