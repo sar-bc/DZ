@@ -1,7 +1,7 @@
-# from employee import salary, hourly, commission
 from employee.salary import SalaryEmployee
 from employee.hourly import HourlyEmployee
 from employee.commission import CommissionEmloyee
+
 
 class PayrollSystem:
     def calculate(self, emplotees):

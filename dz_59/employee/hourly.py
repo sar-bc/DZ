@@ -1,8 +1,8 @@
-# from employee import employee
-from employee import Employee
+from employee import employee
+# from employee import Employee
 
 
-class HourlyEmployee(Employee):
+class HourlyEmployee(employee.Employee):
     """Сотрудники с почасовой оплатой"""
 
     def __init__(self, kod, name, hours_worked, house_rate):
