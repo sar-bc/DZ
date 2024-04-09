@@ -1,7 +1,7 @@
 from employee import employee
+# from employee import Employee
 
-
-class SalaryEmployee(employee.Employee):
+class SalaryEmployee(Employee):
     """Административные сотрудники, имеют фиксированную зарплату"""
 
     def __init__(self, kod, name, weekly_salary):

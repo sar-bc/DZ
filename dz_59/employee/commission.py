@@ -1,7 +1,8 @@
-from employee import salary
+# from employee import salary
 
+from salary import SalaryEmployee
 
-class CommissionEmloyee(salary.SalaryEmployee):
+class CommissionEmloyee(SalaryEmployee):
     """Торговые представители, фиксированная зарплата + коммисия"""
 
     def __init__(self, kod, name, weekly_salary, commission):
