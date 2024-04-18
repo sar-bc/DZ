@@ -12,4 +12,7 @@ with open("json.csv", "w") as f:
         writer.writerow(w)
     print("Запись в файл выполнена.")
 
+
+
+
         
