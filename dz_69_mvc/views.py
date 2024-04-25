@@ -26,13 +26,13 @@ class UserInterface:
     @add_title("Добавление фильма")
     def add_user_movie(self):
         dict_movie = {
-            "Название": None,
-            "Жанр": None,
-            "Режиссер": None,
-            "Год выхода": None,
-            "Длительность": None,
-            "Студия": None,
-            "Актеры": None
+            "название": None,
+            "жанр": None,
+            "режиссера": None,
+            "год выхода": None,
+            "длительность": None,
+            "студию": None,
+            "актеров": None
         }
         for key in dict_movie:
             dict_movie[key] = input(f"Введите {key} фильма: ")
