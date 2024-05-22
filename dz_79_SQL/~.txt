@@ -1,0 +1,29 @@
+1. С помощью объединения вывести данные о каждом заказчике,
+ для которого определен продавец.
+
+SELECT z.*
+FROM (Zakaz z INNER JOIN Klient k ON z.ID_KL=k.ID_KL) INNER JOIN Prodaves p
+ON k.ID_Pr=p.ID_Pr
+======================================
+2.	Вывести имя заказчика и данные о средней цене доставки для него.
+ Если цена доставки больше средней по таблице написать - lot, меньше – few
+ 
+SELECT k.Name_KL AS "Имя заказчика", AVG(z.Cena_Dostavki) AS "Средняя ценая доставки", "few" AS "few-lot"
+FROM Klient k, Zakaz z
+WHERE k.ID_KL=z.ID_KL 
+GROUP BY k.Name_KL
+HAVING AVG(z.Cena_Dostavki) >=
+    (SELECT AVG(Cena_Dostavki)
+    FROM Zakaz
+    )
+ UNION   
+    
+SELECT k.Name_KL, AVG(z.Cena_Dostavki), "lot"
+FROM Klient k, Zakaz z
+WHERE k.ID_KL=z.ID_KL 
+GROUP BY k.Name_KL
+HAVING AVG(z.Cena_Dostavki) <
+    (SELECT AVG(Cena_Dostavki)
+    FROM Zakaz
+    )
+ ====================================
