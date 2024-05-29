@@ -9,4 +9,7 @@ html = """
 <p>{{get_input('username')}}</p>
 """
 
+tm = Template(html)
+msg = tm.render()
 
+print(msg)
